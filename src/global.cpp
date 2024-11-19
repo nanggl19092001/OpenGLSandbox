@@ -6,8 +6,12 @@
 #include <vector>
 
 #include "./struct.cpp"
-#include "Mesh.h"
+#include "mesh.hpp"
+#include "shader.hpp"
+#include "window.hpp"
 
+std::vector<Mesh*> meshList;
+std::vector<Shader> shaderList;
 
 GLuint VAO, VBO, IBO, shader, modelUniLocation, projectionUniLocation;
 
@@ -20,4 +24,3 @@ float aspect = (float)1024/(float)720;
 float zNear = 0.1f;
 float zFar = 100.0f;
 
-std::vector<Mesh*> meshList;

@@ -1,4 +1,4 @@
-#include "./Mesh.h"
+#include "./mesh.hpp"
 
 Mesh::Mesh()
 {
