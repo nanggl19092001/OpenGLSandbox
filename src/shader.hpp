@@ -24,10 +24,15 @@ public:
     GLuint getProjectionUni();
     GLuint getModelViewUni();
 
+    GLuint getViewUni();
+    GLuint getTexUni();
+
     const char* projectionUniName = "projectionMatrix";
     const char* modelViewUniName = "modelViewMatrix";
+    const char* viewUniName = "viewMatrix";
+    const char* texUniName = "texUni";
 private:
-    GLuint shaderId, projectionUni, modelViewUni;
+    GLuint shaderId, projectionUni, modelViewUni, viewUni, texUni;
 
     void compileShader(const char *vShader, const char *fShader);
 

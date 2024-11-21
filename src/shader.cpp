@@ -3,6 +3,7 @@
 #include <GLFW/glfw3.h>
 
 #include "./shader.hpp"
+#include "shader.hpp"
 
 Shader::Shader()
 {
@@ -106,6 +107,14 @@ GLuint Shader::getModelViewUni()
     return this->modelViewUni;
 }
 
+GLuint Shader::getViewUni()
+{
+    return this->viewUni;
+}
+GLuint Shader::getTexUni()
+{
+    return this->texUni;
+}
 void Shader::compileShader(const char *vShader, const char *fShader)
 {
     GLuint shader = glCreateProgram();
@@ -142,6 +151,8 @@ void Shader::compileShader(const char *vShader, const char *fShader)
 
     this->projectionUni = glGetUniformLocation(shader, this->projectionUniName);
     this->modelViewUni = glGetUniformLocation(shader, this->modelViewUniName);
+    this->viewUni = glGetUniformLocation(shader, this->viewUniName);
+    this->texUni = glGetUniformLocation(shader, this->texUniName);
     shaderId = shader;
 }
 
